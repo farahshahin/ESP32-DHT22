@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "Wokwi",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 6.6, "left": 12.4, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -9.6, "left": -187.16, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -57.3, "left": 215.4, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3", "bb1:bn.20", "red", [ "v105.6" ] ],
+    [ "esp:GND.2", "bb1:bn.1", "black", [] ],
+    [ "dht1:VCC", "bb1:21t.a", "red", [] ],
+    [ "dht1:SDA", "bb1:22t.a", "yellow", [] ],
+    [ "dht1:NC", "bb1:23t.a", "", [] ],
+    [ "dht1:GND", "bb1:24t.a", "black", [] ],
+    [ "bb1:22t.e", "esp:15", "yellow", [ "v0" ] ],
+    [ "esp:23", "bb1:21t.e", "green", [ "h67.2", "v-86.4", "h201.6", "v153.6" ] ]
+  ],
+  "dependencies": {}
+}
